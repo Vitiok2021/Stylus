@@ -11,14 +11,6 @@
 @font-face {
   font-family: PlusJakartaSans;
   font-display: swap;
-  src: url("../fonts/PlusJakartaSans-Medium.woff2") format("woff2"), url("../fonts/PlusJakartaSans-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: PlusJakartaSans;
-  font-display: swap;
   src: url("../fonts/PlusJakartaSans-ExtraBold.woff2") format("woff2"), url("../fonts/PlusJakartaSans-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -27,16 +19,24 @@
 @font-face {
   font-family: PlusJakartaSans;
   font-display: swap;
-  src: url("../fonts/PlusJakartaSans-Regular.woff2") format("woff2"), url("../fonts/PlusJakartaSans-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/PlusJakartaSans-Light.woff2") format("woff2"), url("../fonts/PlusJakartaSans-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: PlusJakartaSans;
   font-display: swap;
-  src: url("../fonts/PlusJakartaSans-Light.woff2") format("woff2"), url("../fonts/PlusJakartaSans-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/PlusJakartaSans-Medium.woff2") format("woff2"), url("../fonts/PlusJakartaSans-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: PlusJakartaSans;
+  font-display: swap;
+  src: url("../fonts/PlusJakartaSans-Regular.woff2") format("woff2"), url("../fonts/PlusJakartaSans-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -63,24 +63,48 @@
   display: block;
 }
 
+._icon-arrow:before {
+  content: "\e90d";
+}
+
+._icon-checked:before {
+  content: "\e90e";
+}
+
+._icon-first_class:before {
+  content: "\e908";
+}
+
+._icon-ontario:before {
+  content: "\e909";
+}
+
+._icon-ginos_pizza:before {
+  content: "\e90a";
+}
+
+._icon-oakville:before {
+  content: "\e90b";
+}
+
+._icon-halton:before {
+  content: "\e90c";
+}
+
 ._icon-01:before {
   content: "\e900";
-  color: #fff;
 }
 
 ._icon-02:before {
   content: "\e901";
-  color: #fff;
 }
 
 ._icon-03:before {
   content: "\e902";
-  color: #fff;
 }
 
 ._icon-04:before {
   content: "\e903";
-  color: #fff;
 }
 
 ._icon-linked-In:before {
@@ -1243,6 +1267,7 @@ body {
 }
 
 .card-services__icon span::before {
+  color: #fff;
   -webkit-transition: color 0.5s ease 0s;
   transition: color 0.5s ease 0s;
 }
@@ -1521,21 +1546,27 @@ body {
   color: #f5900d;
   font-weight: 800;
   font-size: 1.5rem;
-  position: relative;
-  gap: 0.5rem;
+  gap: 0.5625rem;
   -webkit-transition: color 0.3s ease 0s;
   transition: color 0.3s ease 0s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 
-.card-blog__more-link::after {
-  content: "";
-  background: url("../img/blog/arrow.svg") 0 0 no-repeat;
-  position: absolute;
-  top: 0.3125rem;
-  width: 1.625rem;
-  height: 1.375rem;
-  display: inline-block;
-  margin-left: 0.5rem;
+.card-blog__more-link::before {
+  font-size: 1.375rem;
+  color: #f5900d;
+  -webkit-transform: translate(0, 2px);
+      -ms-transform: translate(0, 2px);
+          transform: translate(0, 2px);
   -webkit-transition: color 0.3s ease 0s;
   transition: color 0.3s ease 0s;
 }
@@ -1723,31 +1754,30 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   gap: 1.25rem;
-}
-
-.brands-page__image {
-  padding: 0.9375rem;
   opacity: 0;
   -webkit-transform: translate(0, 30%);
       -ms-transform: translate(0, 30%);
           transform: translate(0, 30%);
   -webkit-transition: all 1s ease 0.3;
   transition: all 1s ease 0.3;
-  -webkit-transition: -webkit-transform 0.3s ease 0s;
-  transition: -webkit-transform 0.3s ease 0s;
-  transition: transform 0.3s ease 0s;
-  transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
 }
 
-.brands-page__image img {
-  max-width: 100%;
-}
-
-._watcher-view .brands-page__image {
+._watcher-view .brands-page__body {
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   opacity: 1;
+}
+
+.brands-page__image {
+  font-size: 3.75rem;
+  padding: 0.9375rem;
+  -webkit-transition: color 0.3s ease 0s;
+  transition: color 0.3s ease 0s;
+}
+
+.brands-page__image img {
+  max-width: 100%;
 }
 
 .why-servicess__container {
@@ -2109,6 +2139,10 @@ body {
     margin-bottom: 5rem;
   }
 
+  .brands-page__image {
+    font-size: 3.75rem;
+  }
+
   .why-servicess {
     padding-top: 5rem;
   }
@@ -2345,6 +2379,10 @@ body {
 
   .brands-page__subtitle:not(:last-child) {
     margin-bottom: 1.875rem;
+  }
+
+  .brands-page__image {
+    font-size: 2.5rem;
   }
 
   .why-servicess {
@@ -3360,6 +3398,18 @@ body {
     }
 }
 
+@supports (font-size: clamp( 2.5rem , 2.095959596rem  +  2.0202020202vw , 3.75rem )) {
+    .brands-page__image {
+      font-size: clamp( 2.5rem , 2.095959596rem  +  2.0202020202vw , 3.75rem );
+    }
+}
+
+@supports not (font-size: clamp( 2.5rem , 2.095959596rem  +  2.0202020202vw , 3.75rem )) {
+    .brands-page__image {
+      font-size: calc(2.5rem + 1.25 * (100vw - 20rem) / 61.875);
+    }
+}
+
 @supports (padding-top: clamp( 1.875rem , 0.8648989899rem  +  5.0505050505vw , 5rem )) {
     .why-servicess {
       padding-top: clamp( 1.875rem , 0.8648989899rem  +  5.0505050505vw , 5rem );
@@ -3509,14 +3559,16 @@ body {
     background-color: #d1d0d0;
   }
 
+  .card-blog__more-link:hover::before {
+    color: #fff;
+  }
+
   .card-blog__more-link:hover {
     color: #fff;
   }
 
   .brands-page__image:hover {
-    -webkit-transform: scale(1.05);
-        -ms-transform: scale(1.05);
-            transform: scale(1.05);
+    color: #fff;
   }
 }
 
